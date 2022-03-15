@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/postsFragment">
+
+    <fragment
+        android:id="@+id/postsFragment"
+        android:name="com.zemoga.zemogatest.presenter.ui.PostsFragment"
+        android:label="Posts"
+        tools:layout="@layout/fragment_posts" >
+        <action
+            android:id="@+id/action_postsFragment_to_detailFragment"
+            app:destination="@id/detailFragment" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/detailFragment"
+        android:name="com.zemoga.zemogatest.presenter.ui.DetailFragment"
+        android:label=""
+        tools:layout="@layout/fragment_detail">
+
+        <argument
+            android:name="title"
+            app:argType="string" />
+
+        <argument
+            android:name="body"
+            app:argType="string" />
+
+        <argument
+            android:name="id"
+            app:argType="long" />
+
+        <argument
+            android:name="userId"
+            app:argType="long" />
+
+
+    </fragment>
+    <fragment
+        android:id="@+id/favoritesFragment"
+        android:name="com.zemoga.zemogatest.presenter.ui.FavoritesFragment"
+        android:label="Favorites"
+        tools:layout="@layout/fragment_favorite">
+        <action
+            android:id="@+id/action_favoritesFragment_to_detailFragment"
+            app:destination="@id/detailFragment" />
+    </fragment>
+</navigation>
